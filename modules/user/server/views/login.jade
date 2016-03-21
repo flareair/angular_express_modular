@@ -1,0 +1,13 @@
+h1 Login user
+
+.row
+  .col-md-4
+    form
+      .form-group
+        label Username
+        input.form-control(type='text' name='username' placeholder='Your username' ng-model='loginpage.username')
+      .form-group
+        label Password
+        input.form-control(type='password' name='password' placeholder='Password' ng-model='loginpage.password')
+      .form-group
+        button.btn.btn-primary(type='submit' ng-click='loginpage.logIn(loginpage.username, loginpage.password)') Log in
