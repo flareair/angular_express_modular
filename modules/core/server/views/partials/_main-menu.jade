@@ -15,7 +15,13 @@ nav.navbar.navbar-default
                         li
                             a(href=val, title=key)= key
             ul.nav.navbar-nav.navbar-right
-              li(ng-show='app.username()')
-                a(href='users/profile') {{app.username()}}
+              li.dropdown(ng-show='app.username()')
+                a.dropdown-toggle(href='#' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false') {{app.username()}} #[span.caret]
+                ul.dropdown-menu
+                  li
+                    a(href='users/profile') Profile
+                  li.divider(role='separator')
+                  li
+                    a(ng-click='app.logOut()') Logout
               li(ng-hide='app.username()')
                 a(href='users/login') Log in
